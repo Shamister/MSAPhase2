@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace Phase2Back.Models
 {
+    /**
+     * Assignment Entity represents an assignment for a specific course.
+     * This assignment only belongs to a course and 
+     * each student in that course cannot have two assignments with the same AssignmentID.
+     */
     public class Assignment
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
