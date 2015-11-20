@@ -27,7 +27,6 @@ namespace Phase2Back.Models
 
             protected override void Seed(Phase2BackContext context)
             {
-                /**
                 // CREATE DUMMY COURSES
                 // COURSE ID = 3 LETTERS + 3 NUMBERS
                 var courses = new List<Course>
@@ -42,11 +41,22 @@ namespace Phase2Back.Models
                 // CREATE DUMMY ASSIGNMENTS
                 var assignments = new List<Assignment>
                 {
-                    new Assignment {AssignmentID = 1018888101,  CourseID = "XXX101", Title="Assignment 1", ReleaseDate=DateTime.Parse("2015-08-11"), EndDate=DateTime.Parse("2005-09-1"), Percentage=10},
-                    new Assignment {AssignmentID = 1018888102,  CourseID = "XXX102", Title="Assignment 1", ReleaseDate=DateTime.Parse("2015-08-12"), EndDate=DateTime.Parse("2005-09-1"), Percentage=15},
-                    new Assignment {AssignmentID = 1028888101,  CourseID = "XXX101", Title="Assignment 2", ReleaseDate=DateTime.Parse("2015-09-8"), EndDate=DateTime.Parse("2005-10-1"), Percentage=10}
+                    new Assignment {AssignmentID = 1,  CourseID = "XXX101", Title="Assignment 1", ReleaseDate=DateTime.Parse("2015-08-11"), EndDate=DateTime.Parse("2015-09-1"), Percentage=10},
+                    new Assignment {AssignmentID = 1,  CourseID = "XXX102", Title="Assignment 1", ReleaseDate=DateTime.Parse("2015-08-12"), EndDate=DateTime.Parse("2015-09-1"), Percentage=15},
+                    new Assignment {AssignmentID = 2,  CourseID = "XXX101", Title="Assignment 2", ReleaseDate=DateTime.Parse("2015-09-8"), EndDate=DateTime.Parse("2015-10-1"), Percentage=10}
                 };
-                */
+
+                assignments.ForEach(s => context.Assignments.AddOrUpdate(p => new { p.AssignmentID, p.CourseID }, s));
+                context.SaveChanges();
+
+                // CREATE DUMMY TESTS
+                var tests = new List<Test>
+                {
+                    new Test {TestID = 1, CourseID = "XXX101", Title = "Mid Term Test", ReleaseDate=DateTime.Parse("2015-08-11"), EndDate=DateTime.Parse("2015-08-11"), Percentage=20 },
+                    new Test {TestID = 2, CourseID = "XXX101", Title = "Final Exam", ReleaseDate=DateTime.Parse("2015-12-11"), EndDate=DateTime.Parse("2015-12-11"), Percentage=60 },
+                };
+                tests.ForEach(s => context.Tests.AddOrUpdate(p => new { p.TestID, p.CourseID }, s));
+                context.SaveChanges();
             }
         }
 
