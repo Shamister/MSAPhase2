@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,14 @@ namespace Phase2Back.Models
     public class Assignment
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
+        [Column(Order = 1)]
         public int AssignmentID
         {
             get; set;
         }
+        [Key]
+        [Column(Order = 2)]
         public string CourseID
         {
             get; set;

@@ -27,6 +27,26 @@ namespace Phase2Back.Models
 
             protected override void Seed(Phase2BackContext context)
             {
+                /**
+                // CREATE DUMMY COURSES
+                // COURSE ID = 3 LETTERS + 3 NUMBERS
+                var courses = new List<Course>
+                {
+                    new Course {CourseID = "XXX101", Title="Dummy Course", Credits=15},
+                    new Course {CourseID = "XXX102", Title="Dummy Course 2", Credits=15},
+                    new Course {CourseID = "XXX103", Title="Dummy Course 3", Credits=15},
+                };
+                courses.ForEach(s => context.Courses.AddOrUpdate(p => p.CourseID, s));
+                context.SaveChanges();
+
+                // CREATE DUMMY ASSIGNMENTS
+                var assignments = new List<Assignment>
+                {
+                    new Assignment {AssignmentID = 1018888101,  CourseID = "XXX101", Title="Assignment 1", ReleaseDate=DateTime.Parse("2015-08-11"), EndDate=DateTime.Parse("2005-09-1"), Percentage=10},
+                    new Assignment {AssignmentID = 1018888102,  CourseID = "XXX102", Title="Assignment 1", ReleaseDate=DateTime.Parse("2015-08-12"), EndDate=DateTime.Parse("2005-09-1"), Percentage=15},
+                    new Assignment {AssignmentID = 1028888101,  CourseID = "XXX101", Title="Assignment 2", ReleaseDate=DateTime.Parse("2015-09-8"), EndDate=DateTime.Parse("2005-10-1"), Percentage=10}
+                };
+                */
             }
         }
 
