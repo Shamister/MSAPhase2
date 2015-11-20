@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/loader.js"></script>
+        <script src="js/internet.js"></script>
+    </head>
+    <body data-ng-controller="courses">
+        <header>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">University of Contoso</a>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="courses.html">Courses</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <a href="#">Create New</a>
+            <div class="table-responsive">
+                <!-- Your loading message goes here -->
+                <p id="loadingmsg">Students table loading...</p>
+                <table class="table table-striped spaced-table table-hover hidden" id="courseTable">
+                    <thead>
+                        <!-- Table Headings -->
+                        <tr>
+                            <!-- Table row -->
+                            <th>Course ID</th>
+                            <th>Title</th>
+                            <th>Credits</th>
+                            <!-- Button gos in this column -->
+                            <th></th> 
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <!-- We also need the actual table body -->
+                    <!-- We need and ID as we input data into this from js files -->
+                    <tbody id="courseContent">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

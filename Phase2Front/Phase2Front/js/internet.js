@@ -1,55 +1,57 @@
-﻿var StudentModule = (function () {
+﻿var courseModule = (function () {
+
+    var courseAPI = "http://phase2back.azurewebsites.net/api/Courses";
 
     return {
-        getStudents: function (callback) {
+        getCourses: function (callback) {
 
             var xhttp = new XMLHttpRequest();
-            
+
             //This gets triggered when the state of the xhttp object changes
             xhttp.onreadystatechange = function () {
                 // 4 - repsonse is ready, 200 success code
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    loadedStudents();
+                    loadedCourses();
                 }
             }
-            
+
             // Build up our request and send it - true for async
-            xhttp.open("GET", "http://wendelday2.azurewebsites.net/api/Students", true);
+            xhttp.open("GET", courseAPI, true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send(null);
-            
-            // Parse and send the studentlist data back to index.js
-            function loadedStudents() {
-                var studentsList = JSON.parse(xhttp.responseText);
-                callback(studentsList);
-                return studentsList;
+
+            // Parse and send the courselist data back to index.js
+            function loadedCourses() {
+                var coursesList = JSON.parse(xhttp.responseText);
+                callback(coursesList);
+                return coursesList;
             }
         },
 
-        getStudentById: function (id, callback){
+        getCourseById: function (id, callback) {
 
             var xhttp = new XMLHttpRequest();
 
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    loadedStudent();
+                    loadedCourse();
                 }
             }
 
-            xhttp.open("GET", "http://msauniversity.azurewebsites.net/api/Students/" + id, true);
+            xhttp.open("GET", courseAPI + id, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
             xhttp.send();
 
-            function loadedStudent() {
-                var student = JSON.parse(xhttp.responseText);
-                callback(student);
-                return student;
+            function loadedCourse() {
+                var course = JSON.parse(xhttp.responseText);
+                callback(course);
+                return course;
             }
         },
 
-        addStudent: function (student, callback) {
-            
+        addCourse: function (course, callback) {
+
             var xhttp = new XMLHttpRequest();
 
             xhttp.onreadystatechange = function () {
@@ -58,14 +60,14 @@
                 }
             }
 
-            xhttp.open("POST", "http://msauniversity.azurewebsites.net/api/Students", true);
+            xhttp.open("POST", courseAPI, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
-            xhttp.send(JSON.stringify(student));
+            xhttp.send(JSON.stringify(course));
 
         },
 
-        updateStudent: function (studentid, student, callback){
+        updateCourse: function (courseid, course, callback) {
 
             var xhttp = new XMLHttpRequest();
 
@@ -75,14 +77,14 @@
                 }
             }
 
-            xhttp.open("PUT", "http://msauniversity.azurewebsites.net/api/Students/" + studentid, true);
+            xhttp.open("PUT", courseAPI + courseid, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
-            xhttp.send(JSON.stringify(student));
+            xhttp.send(JSON.stringify(course));
         },
 
-        deleteStudent: function (studentid, callback) {
-            
+        deleteCourse: function (courseid, callback) {
+
             var xhttp = new XMLHttpRequest();
 
             xhttp.onreadystatechange = function () {
@@ -91,11 +93,11 @@
                 }
             }
 
-            xhttp.open("DELETE", "http://msauniversity.azurewebsites.net/api/Students/" + studentid, true);
+            xhttp.open("DELETE", courseAPI + courseid, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
             xhttp.send();
-        }
+        },
     };
 
 }());
