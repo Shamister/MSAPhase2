@@ -82,7 +82,22 @@ namespace Phase2Back.Controllers
             }
 
             db.Students.Add(student);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (StudentExists(student.StudentID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = student.StudentID }, student);
         }

@@ -82,7 +82,22 @@ namespace Phase2Back.Controllers
             }
 
             db.Enrollments.Add(enrollment);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (EnrollmentExists(enrollment.EnrollmentID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = enrollment.EnrollmentID }, enrollment);
         }

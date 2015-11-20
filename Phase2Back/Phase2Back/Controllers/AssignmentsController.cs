@@ -82,7 +82,22 @@ namespace Phase2Back.Controllers
             }
 
             db.Assignments.Add(assignment);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (AssignmentExists(assignment.AssignmentID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = assignment.AssignmentID }, assignment);
         }

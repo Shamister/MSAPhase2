@@ -82,7 +82,22 @@ namespace Phase2Back.Controllers
             }
 
             db.Tests.Add(test);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (TestExists(test.TestID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = test.TestID }, test);
         }

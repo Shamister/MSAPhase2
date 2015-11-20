@@ -15,6 +15,10 @@ namespace Phase2Back.Models
         {
             get; set;
         }
+        public string CourseID
+        {
+            get; set;
+        }
         public string Title
         {
             get; set;
