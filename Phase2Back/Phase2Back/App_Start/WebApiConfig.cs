@@ -9,6 +9,9 @@ namespace Phase2Back
     {
         public static void Register(HttpConfiguration config)
         {
+            // enable cors
+            config.EnableCors();
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
