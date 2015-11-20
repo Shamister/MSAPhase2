@@ -11,7 +11,7 @@ namespace Phase2Back.Models
 
     public enum Grade
     {
-        A, B, C, D, F
+        A, B, C, D, F, P
     }
     public class Enrollment
     {
@@ -28,6 +28,10 @@ namespace Phase2Back.Models
             get; set;
         }
         public Grade? Grade
+        {
+            get; set;
+        }
+        public DateTime EnrollmentDate
         {
             get; set;
         }

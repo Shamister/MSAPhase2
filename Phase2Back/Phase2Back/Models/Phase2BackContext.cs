@@ -57,6 +57,22 @@ namespace Phase2Back.Models
                 };
                 tests.ForEach(s => context.Tests.AddOrUpdate(p => new { p.TestID, p.CourseID }, s));
                 context.SaveChanges();
+
+                // CREATE DUMMY STUDENTS
+                var students = new List<Student>
+                {
+                    new Student {StudentID=100000, LastName = "Baba", FirstName = "Ali", EnrollmentDate=DateTime.Parse("2005-08-11")}
+                };
+                students.ForEach(s => context.Students.AddOrUpdate(p =>  p.StudentID, s));
+                context.SaveChanges();
+
+                // CREATE DUMMY ENROLLMENTS
+                var enrollments = new List<Enrollment>
+                {
+                    new Enrollment { EnrollmentID=1, CourseID="XXX101", StudentID=100000, Grade=Grade.P, EnrollmentDate=DateTime.Parse("2015-04-11")}
+                };
+                enrollments.ForEach(s => context.Enrollments.AddOrUpdate(p => p.EnrollmentID, s));
+                context.SaveChanges();
             }
         }
 
