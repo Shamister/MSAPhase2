@@ -26,9 +26,9 @@ namespace Phase2Back.Controllers
 
         // GET: api/Assignments/5
         [ResponseType(typeof(Assignment))]
-        public IHttpActionResult GetAssignment(int id)
+        public IHttpActionResult GetAssignment(int id, string courseID)
         {
-            Assignment assignment = db.Assignments.Find(id);
+            Assignment assignment = db.Assignments.Find(id, courseID);
             if (assignment == null)
             {
                 return NotFound();

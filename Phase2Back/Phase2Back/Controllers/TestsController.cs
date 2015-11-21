@@ -26,9 +26,9 @@ namespace Phase2Back.Controllers
 
         // GET: api/Tests/5
         [ResponseType(typeof(Test))]
-        public IHttpActionResult GetTest(int id)
+        public IHttpActionResult GetTest(int id, string courseID)
         {
-            Test test = db.Tests.Find(id);
+            Test test = db.Tests.Find(id, courseID);
             if (test == null)
             {
                 return NotFound();
