@@ -18,9 +18,9 @@ function loadCourseTable(controller) {
                 var row = document.createElement("tr");
                 row.setAttribute("data-id", courses[i].CourseID);
 
-                var col_lastname = document.createElement("td");
-                var col_firstname = document.createElement("td");
-                var col_enrol = document.createElement("td");
+                var col_courseID = document.createElement("td");
+                var col_courseTitle = document.createElement("td");
+                var col_credits = document.createElement("td");
 
                 var col_edit = document.createElement("td");
                 var editButton = document.createElement("a");
@@ -43,13 +43,13 @@ function loadCourseTable(controller) {
                 deleteButton.setAttribute("data-btntype", "delete");
                 col_delete.appendChild(deleteButton);
 
-                col_lastname.innerHTML = courses[i].CourseID;
-                col_firstname.innerHTML = courses[i].Title;
-                col_enrol.innerHTML = courses[i].Credits;
+                col_courseID.innerHTML = courses[i].CourseID;
+                col_courseTitle.innerHTML = courses[i].Title;
+                col_credits.innerHTML = courses[i].Credits;
 
-                row.appendChild(col_lastname);
-                row.appendChild(col_firstname);
-                row.appendChild(col_enrol);
+                row.appendChild(col_courseID);
+                row.appendChild(col_courseTitle);
+                row.appendChild(col_credits);
                 row.appendChild(col_edit);
                 row.appendChild(col_details);
                 row.appendChild(col_delete);
@@ -93,9 +93,9 @@ function loadCourseTable(controller) {
                             closeOnConfirm: false
                         }, function () {
                             courseModule.deleteCourse(target.getAttribute("data-id"), function () {
-                                swal("Deleted!", "The course has been deleted.", "success");
                                 window.location.reload(true);
                             });
+                            swal("Deleted!", "The course has been deleted.", "success");
                         });
                         return;
 

@@ -67,10 +67,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="courses\assignments\js\assignmentLoader.js" />
+    <Content Include="courses\assignments\js\assignmentModule.js" />
     <Content Include="courses\details.html" />
+    <Content Include="courses\create.html" />
     <Content Include="courses\edit.html" />
-    <Content Include="courses\js\details.js" />
-    <Content Include="courses\js\edit.js" />
+    <Content Include="courses\js\createCourse.js" />
+    <Content Include="courses\js\detailsCourse.js" />
+    <Content Include="courses\js\editCourse.js" />
     <Content Include="css\sweetalert.css" />
     <Content Include="js\jquery-2.1.3.min.js" />
     <Content Include="js\sweetalert-min.js" />
@@ -93,14 +97,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="courses\index.html" />
     <Content Include="index.html" />
-    <Content Include="js\internet.js" />
-    <Content Include="js\loader.js" />
+    <Content Include="courses\js\courseModule.js" />
+    <Content Include="courses\js\courseLoader.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="courses\tests\js\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
