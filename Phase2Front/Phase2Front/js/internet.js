@@ -28,7 +28,7 @@
             }
         },
 
-        getCourseById: function (id, callback) {
+        getCourseById: function (courseid, callback) {
 
             var xhttp = new XMLHttpRequest();
 
@@ -38,7 +38,7 @@
                 }
             }
 
-            xhttp.open("GET", courseAPI + id, true);
+            xhttp.open("GET", courseAPI +"/"+ courseid, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
             xhttp.send();
@@ -77,7 +77,7 @@
                 }
             }
 
-            xhttp.open("PUT", courseAPI + courseid, true);
+            xhttp.open("PUT", courseAPI +"/"+ courseid, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
             xhttp.send(JSON.stringify(course));
@@ -93,7 +93,7 @@
                 }
             }
 
-            xhttp.open("DELETE", courseAPI + courseid, true);
+            xhttp.open("DELETE", courseAPI +"/"+ courseid, true);
             xhttp.setRequestHeader("Content-type", "application/json");
 
             xhttp.send();
