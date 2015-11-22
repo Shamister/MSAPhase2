@@ -2,6 +2,15 @@
     var controller = getUrlParameters("type", "", true);
     var id = getUrlParameters("id", "", true);
     if (controller === "courses") {
+        // set up the link for creating a new assignment or test
+        var createAssignment = document.getElementById("createAssignment");
+        var createTest = document.getElementById("createTest");
+
+        console.log(createAssignment);
+
+        createAssignment.setAttribute("href", '/courses/assignments/create.html' + '?type=assignments&courseID=' + id);
+        createTest.setAttribute("href", '/courses/tests/create.html' + '?type=tests&courseID=' + id);
+
         courseModule.getCourseById(id, function (course) {
             document.getElementById("loadingmsg").classList.add("hidden");
             document.getElementById("details").classList.remove("hidden");

@@ -9,7 +9,7 @@
         setupAssignmentSubmit(id, courseID);
     }
 
-    setupReturn();
+    setupReturn(courseID);
 
 });
 
@@ -57,7 +57,7 @@ function setupAssignmentSubmit(id, cid) {
 }
 
 //Go back to home without saving changes
-function setupReturn() {
+function setupReturn(cid) {
     document.getElementById("cancelButton").addEventListener('click', function () {
         window.location.href = "/courses/details.html?type=courses&id=" + cid;
     });

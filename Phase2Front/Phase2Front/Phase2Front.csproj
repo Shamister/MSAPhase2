@@ -70,6 +70,7 @@
     <Content Include="courses\assignments\edit.html" />
     <Content Include="courses\assignments\js\assignmentLoader.js" />
     <Content Include="courses\assignments\js\assignmentModule.js" />
+    <Content Include="courses\assignments\create.html" />
     <Content Include="courses\assignments\js\createAssignment.js" />
     <Content Include="courses\assignments\js\detailsAssignment.js" />
     <Content Include="courses\assignments\js\editAssignment.js" />

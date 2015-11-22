@@ -23,6 +23,6 @@ function setupCourseSubmit() {
 //Go back to home without saving changes
 function setupReturn() {
     document.getElementById("cancelButton").addEventListener('click', function () {
-        window.location.href = "index.html";
+        window.location.href = "/courses";
     });
 }

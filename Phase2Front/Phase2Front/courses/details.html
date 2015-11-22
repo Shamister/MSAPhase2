@@ -5,10 +5,13 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/sweetalert.css" />
         <script src="js/courseModule.js"></script>
         <script src="js/detailsCourse.js"></script>
         <script src="assignments/js/assignmentModule.js"></script>
         <script src="assignments/js/assignmentLoader.js"></script>
+        <script src="../js/jquery-2.1.3.min.js"></script>
+        <script src="../js/sweetalert-min.js"></script>
     </head>
     <body>
         <header>
@@ -53,6 +56,7 @@
                         </tbody>
                     </table>
                     <h4>Assignments</h4>
+                    <a id="createAssignment">Create A New Assignment</a>
                     <p id="loadingassignmentsmsg">Assignments loading...</p>
                     <table class="table spaced-table table-hover hidden" id="assignmentTable">
                         <thead>
@@ -71,6 +75,7 @@
                         </tbody>
                     </table>
                     <h4>Tests</h4>
+                    <a id="createTest">Create A New Test</a>
                     <p id="loadingtestsmsg">Tests loading...</p>
                     <table class="table spaced-table table-hover hidden" id="testTable">
                         <thead>
