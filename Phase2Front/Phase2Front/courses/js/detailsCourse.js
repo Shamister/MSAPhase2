@@ -6,8 +6,6 @@
         var createAssignment = document.getElementById("createAssignment");
         var createTest = document.getElementById("createTest");
 
-        console.log(createAssignment);
-
         createAssignment.setAttribute("href", '/courses/assignments/create.html' + '?type=assignments&courseID=' + id);
         createTest.setAttribute("href", '/courses/tests/create.html' + '?type=tests&courseID=' + id);
 

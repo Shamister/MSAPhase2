@@ -1,11 +1,16 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     var controller = getUrlParameters("type", "", true);
     var id = getUrlParameters("id", "", true);
-    if (controller === "courses") {
-        courseModule.getCourseById(id, function (course) {
+    var courseID = getUrlParameters("courseID", "", true);
+    if (controller === "assignments") {
+        // set up the return link
+        var courseDetails = document.getElementById("courseDetails");
+        courseDetails.setAttribute("href", "/courses/details.html?type=courses&id=" + courseID);
+
+        assignmentModule.getAssignmentById(id, courseID, function (assignment) {
             document.getElementById("loadingmsg").classList.add("hidden");
             document.getElementById("details").classList.remove("hidden");
-            showDetails(course);
+            showDetails(assignment);
         });
     }
 

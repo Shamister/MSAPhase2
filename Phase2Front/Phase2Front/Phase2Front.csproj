@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="courses\assignments\details.html" />
     <Content Include="courses\assignments\edit.html" />
     <Content Include="courses\assignments\js\assignmentLoader.js" />
     <Content Include="courses\assignments\js\assignmentModule.js" />

@@ -3,6 +3,10 @@
     var id = getUrlParameters("id", "", true);
     var courseID = getUrlParameters("courseID", "", true);
     if (controller === "assignments") {
+        // set up the return link
+        var courseDetails = document.getElementById("courseDetails");
+        courseDetails.setAttribute("href", "/courses/details.html?type=courses&id=" + courseID);
+
         assignmentModule.getAssignmentById(id, courseID, function (assignment) {
             loadForm(assignment);
         });

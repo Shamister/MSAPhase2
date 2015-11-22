@@ -2,6 +2,10 @@
     var controller = getUrlParameters("type", "", true);
     var courseID = getUrlParameters("courseID", "", true);
     if (controller === "assignments") {
+        // set up the return link
+        var courseDetails = document.getElementById("courseDetails");
+        courseDetails.setAttribute("href", "/courses/details.html?type=courses&id=" + courseID);
+
         // set the courseIDInput to the course id by default
         var courseIDInput = document.getElementById("CourseIDInput");
         courseIDInput.value = courseID;
