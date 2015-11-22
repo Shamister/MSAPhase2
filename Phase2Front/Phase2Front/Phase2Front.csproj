@@ -119,6 +119,8 @@
     <Content Include="img\2.jpg" />
     <Content Include="img\3.jpg" />
     <Content Include="img\hex-loader.gif" />
+    <Content Include="img\loading.gif" />
+    <Content Include="js\fakeLoader-min.js" />
     <Content Include="js\jquery-2.1.3.min.js" />
     <Content Include="js\sweetalert-min.js" />
     <Content Include="js\unslider-min.js" />

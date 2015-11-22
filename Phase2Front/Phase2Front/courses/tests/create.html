@@ -7,18 +7,26 @@
         <link rel="stylesheet" href="../../css/style.css" />
         <script src="js/testModule.js"></script>
         <script src="js/createTest.js"></script>
+        <script src="../../js/jquery-2.1.4.min.js"></script>
     </head>
     <body>
+        <div class="fakeLoader"></div>
         <header>
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="../">University of Contoso</a>
+                        <a class="navbar-brand" href="/">University of Contoso</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                     </div>
-                    <div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="/">Home</a></li>
-                            <li class="active"><a href="/courses">Courses</a></li>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/courses">Courses</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -62,5 +70,17 @@
                 </div>
             </form>
         </div>
+        <script src="../../js/fakeLoader-min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".fakeLoader").fakeLoader({
+                    timeToHide: 1200, //Time in milliseconds for fakeLoader disappear
+                    zIndex: "999",//Default zIndex
+                    spinner: "spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+                    bgColor: "#2ecc71", //Hex, RGB or RGBA colors
+                    imagePath:"../../img/loading.gif"
+                });
+            });
+        </script>
     </body>
 </html>
