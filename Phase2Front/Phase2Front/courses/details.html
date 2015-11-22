@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="../css/style.css" />
         <script src="js/courseModule.js"></script>
         <script src="js/detailsCourse.js"></script>
+        <script src="assignments/js/assignmentModule.js"></script>
+        <script src="assignments/js/assignmentLoader.js"></script>
     </head>
     <body>
         <header>
@@ -32,7 +34,7 @@
             <a href="/courses">Back to Courses</a>
             <p id="loadingmsg">Course details loading...</p>
             <div id="details" class="hidden">
-                <p>Course Details</p>
+                <h2>Course Details</h2>
                 <div class="table-responsive">
                     <table class="table spaced-table table-hover" id="courseTable">
                         <tbody>
@@ -48,15 +50,46 @@
                                 <td>Credits: </td>
                                 <td id="Credits"></td>
                             </tr>
+                        </tbody>
+                    </table>
+                    <h4>Assignments</h4>
+                    <p id="loadingassignmentsmsg">Assignments loading...</p>
+                    <table class="table spaced-table table-hover hidden" id="assignmentTable">
+                        <thead>
                             <tr>
-                                <td>Assignments</td>
-                                <td id="assignmentsContent"></td>
+                                <th>Assignment ID</th>
+                                <th>Title</th>
+                                <th>Release Date</th>
+                                <th>End Date</th>
+                                <th>Percentage</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
-                            <tr id="tests">
+                        </thead>
+                        <tbody id="assignmentContent">
+                        </tbody>
+                    </table>
+                    <h4>Tests</h4>
+                    <p id="loadingtestsmsg">Tests loading...</p>
+                    <table class="table spaced-table table-hover hidden" id="testTable">
+                        <thead>
+                            <tr>
+                                <th>Test ID</th>
+                                <th>Title</th>
+                                <th>Release Date</th>
+                                <th>End Date</th>
+                                <th>Percentage</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
+                        </thead>
+                        <tbody id="testContent">
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
     </body>
 </html>

@@ -102,7 +102,6 @@ function loadCourseTable(controller) {
                     // Details - this is true if clicked anywhere within the row
                     }
                     else if (target.nodeName.toLowerCase() === "tr") {
-                        console.log(target);
                         window.location.href = 'details.html' + '?type=' + controller + '&id=' + target.getAttribute("data-id");
                         return;
                     }
