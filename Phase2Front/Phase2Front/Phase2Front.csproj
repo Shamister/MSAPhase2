@@ -67,6 +67,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="courses\tests\create.html" />
+    <Content Include="courses\tests\details.html" />
+    <Content Include="courses\tests\edit.html" />
+    <Content Include="courses\tests\js\testLoader.js" />
+    <Content Include="courses\tests\js\testModule.js" />
+    <Content Include="courses\tests\js\createTest.js" />
+    <Content Include="courses\tests\js\detailsTest.js" />
+    <Content Include="courses\tests\js\editTest.js" />
     <Content Include="courses\assignments\details.html" />
     <Content Include="courses\assignments\edit.html" />
     <Content Include="courses\assignments\js\assignmentLoader.js" />
@@ -110,9 +118,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="courses\tests\js\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
